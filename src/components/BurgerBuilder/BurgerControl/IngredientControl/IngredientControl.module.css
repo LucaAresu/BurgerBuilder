@@ -1,3 +1,16 @@
-.IngredientControl p{
-    display: inline-block;
+.IngredientControl {
+    margin: 0.3rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+.IngredientControl p {
+    margin: 0;
+    text-transform: capitalize;
+}
+
+@media (min-width: 700px) {
+    .IngredientControl {
+        width: 250px;
+    }
 }

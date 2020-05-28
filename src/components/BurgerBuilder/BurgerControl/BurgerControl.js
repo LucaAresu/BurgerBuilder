@@ -1,8 +1,11 @@
 import React from 'react';
 import IngredientControl from './IngredientControl/IngredientControl'
+import classes from './BurgerControl.module.css';
+import Button from '../../UI/Button/Button';
 
 const burgerControl = props => {
-    const bottoni = Object.keys(props.ingredients).map(ele =>{
+    const totalIngredients = Object.keys(props.ingredients).map(ele => props.ingredients[ele]).reduce( ( acc, ele) => acc+ele);
+    const ingredienti = Object.keys(props.ingredients).map(ele =>{
     return (
     <IngredientControl
         add = {() => props.add(ele)}
@@ -12,7 +15,21 @@ const burgerControl = props => {
         key = {ele}
     /> )}) 
 
-    return bottoni;
+    return (
+        <div className={classes.BurgerControl}>
+            {ingredienti}
+            <Button 
+                click={props.clear} 
+                text='CLEAR'
+
+            />
+            <Button
+                click={props.order}
+                text='ORDER'
+                disabled={!Boolean(totalIngredients)} 
+            />
+        </div>
+    )
 
 }
 

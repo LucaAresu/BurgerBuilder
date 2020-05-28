@@ -5,10 +5,10 @@ import classes from './Burger.module.css'
 const burger = props => {
 
     const ingredients = Object.keys(props.ingredients).map( ele => {
-        let ing = [];
-        let n = props.ingredients[ele];
+        const ing = [];
+        const n = props.ingredients[ele];
         for(let i = 0 ; i < n ; i++)
-        ing = ing.concat( <Ingredient with={ele} key={ele+i} max={n} idx={i} />)
+        ing.push( <Ingredient with={ele} key={ele+i} idx={i} />)
 
         return ing;
     });

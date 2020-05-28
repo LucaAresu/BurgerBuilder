@@ -1,0 +1,37 @@
+.ModalAnimation-exit-active {
+    animation: closeModal 0.2s linear forwards;
+}
+
+.ModalAnimation-appear-active {
+    animation: openModal 0.2s linear forwards;
+
+}.ModalAnimation-enter-active {
+    animation: openModal 0.2s linear forwards;
+}
+
+
+@keyframes closeModal{
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(0.1);
+    }
+}
+
+@keyframes openModal {
+    0% {
+        transform: scale(0.1);
+    }
+    50% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

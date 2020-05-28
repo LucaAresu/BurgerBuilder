@@ -1,0 +1,16 @@
+.Button {
+    width: 5rem;
+    height: 2rem;
+    background-color: #FFBE0B;
+    border: 1px solid black;
+    transition: 0.2s;
+
+}
+.Button:hover {
+    background-color: #3A86FF;
+}
+
+.Button:disabled {
+    background-color: #979DAC;
+    cursor: no-drop;
+}

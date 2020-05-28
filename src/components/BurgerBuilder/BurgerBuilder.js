@@ -1,46 +1,49 @@
-import React, {Component } from 'react';
+import React, { useState } from 'react';
 import Burger from './Burger/Burger';
 import classes from './BurgerBuilder.module.css'
 import BurgerControl from './BurgerControl/BurgerControl'
-import ingredientControl from './BurgerControl/IngredientControl/IngredientControl';
+import { useDispatch, useSelector } from 'react-redux';
+import * as actions from '../../store/actions/index';
 
-class BurgerBuilder extends Component {
-    state = {
-        ingredients : {
-            bacon : 0,
-            cheese : 0,
-            meat : 0,
-            salad : 0,
-        }
-    }
+const  BurgerBuilder = props => {
+    const [ingredients , setIngredients ] = useState({
+        bacon : 0,
+        cheese : 0,
+        meat : 0,
+        salad : 0,
+    });
 
-    addIngredient = ingredient => {
-        let oldState = {...this.state.ingredients};
-        oldState[ingredient]++;
-        this.setState({
-            ingredients : oldState
-        })
-    }
-    removeIngredient = ingredient => {
-        let oldState = {...this.state.ingredients};
-        oldState[ingredient] --;
-        this.setState({
-            ingredients : oldState
-        })
+    const burgers = useSelector( state => state.order.burger)
+    const dispatch = useDispatch();
+    const addBurgerInOrder = (burger) => dispatch(actions.addBurgerInOrder(burger))
+
+    const addIngredient = ingredient => {
+        const newIngredients = {...ingredients, [ingredient] : ingredients[ingredient]+1};
+        setIngredients(newIngredients);
     }
 
-    render() {
-        return (
-            <div className={classes.BurgerBuilder}>
-                <Burger  ingredients= {this.state.ingredients}/>
-                <BurgerControl
-                    ingredients = {this.state.ingredients}
-                    add = {this.addIngredient}
-                    remove = {this.removeIngredient}
-                />
-            </div>
-        );
+    const removeIngredient = ingredient => {
+        setIngredients({ ...ingredients, [ingredient] : ingredients[ingredient] -1 });
     }
+    const clearIngredients = () => {
+        setIngredients( Object.keys(ingredients).map(ele => ( { [ele] : 0 }) ).reduce( (tot, ele ) => ( { ...tot, ...ele }) ) )
+    }
+    return (
+        <div className={classes.BurgerBuilder}>
+            <Burger  ingredients= {ingredients}/>
+            <BurgerControl
+                ingredients = {ingredients}
+                add = {addIngredient}
+                remove = {removeIngredient}
+                clear={clearIngredients}
+                order= {() =>{
+                    clearIngredients();
+                    addBurgerInOrder(ingredients)
+                }}
+            />
+        </div>
+    );
+
 
 }
 
