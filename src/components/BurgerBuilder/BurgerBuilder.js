@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Burger from './Burger/Burger';
+import Burger from '../Burger/Burger';
 import classes from './BurgerBuilder.module.css'
 import BurgerControl from './BurgerControl/BurgerControl'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as actions from '../../store/actions/index';
 
 const  BurgerBuilder = props => {
@@ -13,7 +13,6 @@ const  BurgerBuilder = props => {
         salad : 0,
     });
 
-    const burgers = useSelector( state => state.order.burger)
     const dispatch = useDispatch();
     const addBurgerInOrder = (burger) => dispatch(actions.addBurgerInOrder(burger))
 
@@ -29,19 +28,24 @@ const  BurgerBuilder = props => {
         setIngredients( Object.keys(ingredients).map(ele => ( { [ele] : 0 }) ).reduce( (tot, ele ) => ( { ...tot, ...ele }) ) )
     }
     return (
-        <div className={classes.BurgerBuilder}>
-            <Burger  ingredients= {ingredients}/>
-            <BurgerControl
-                ingredients = {ingredients}
-                add = {addIngredient}
-                remove = {removeIngredient}
-                clear={clearIngredients}
-                order= {() =>{
-                    clearIngredients();
-                    addBurgerInOrder(ingredients)
-                }}
-            />
-        </div>
+            <div className={classes.BurgerBuilder}>
+                <div className={classes.BurgerContainer}>
+                    <div className={classes.Burger}>
+                        <Burger  ingredients= {ingredients}/>
+                    </div>
+                    
+                </div>
+                <BurgerControl
+                    ingredients = {ingredients}
+                    add = {addIngredient}
+                    remove = {removeIngredient}
+                    clear={clearIngredients}
+                    order= {() =>{
+                        clearIngredients();
+                        addBurgerInOrder(ingredients)
+                    }}
+                />
+            </div>
     );
 
 

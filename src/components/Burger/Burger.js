@@ -1,6 +1,8 @@
 import React from 'react';
 import Ingredient from './Ingredients/Ingredients';
 import classes from './Burger.module.css'
+import { CSSTransition} from 'react-transition-group'
+import './BurgerAnimation.css';
 
 const burger = props => {
 
@@ -13,13 +15,20 @@ const burger = props => {
         return ing;
     });
     return(
-    <div className={classes.Burger}> 
-        <Ingredient with='top' />
+        <CSSTransition
+        appear
+        in
+        timeout={400}
+        classNames='BurgerAnimation'
+     >
+        <div className={classes.Burger}> 
+            <Ingredient with='top' />
 
-        {ingredients}
+            {ingredients}
 
-        <Ingredient with='bottom' />
-    </div>
+            <Ingredient with='bottom' />
+        </div>
+    </CSSTransition>
     );
 };
 

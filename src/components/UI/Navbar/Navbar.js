@@ -5,7 +5,7 @@ import NavItem from './NavItem/NavItem';
 const Navbar = props => (
         <ul className={classes.Navbar}>
             <NavItem to='/' exact>BURGER BUILDER</NavItem>
-            <NavItem to='/billy' exact>Billy</NavItem>
+            <NavItem to='/cart' exact>CARRELLO</NavItem>
         </ul>
 )
 

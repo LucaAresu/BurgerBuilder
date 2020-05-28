@@ -1,22 +1,26 @@
 import React from 'react';
-import './App.css';
 import BurgerBuilder from './components/BurgerBuilder/BurgerBuilder';
 import Modal from './components/UI/Modal/Modal';
 import { Switch, Route } from 'react-router-dom'
 import NavBar from './components/UI/Navbar/Navbar';
+import Cart from './components/Cart/Cart';
+import classes from './App.module.css';
 
 
 
 function App() {
   return (
-      <div className={'App'}>
+      <React.Fragment>
         <NavBar />
         <Modal />
-        <Switch>
-          <Route path='/' exact component={BurgerBuilder} />
-          <Route path='/billy' render={ () => <h1>BILLY</h1>} />
-        </Switch>
-      </div>
+        <div className={classes.App}>
+          <Switch>  
+            <Route path='/' exact component={BurgerBuilder} />
+            <Route path='/cart' component={Cart} />
+          </Switch>
+        </div>
+
+      </React.Fragment>
   );
 }
 

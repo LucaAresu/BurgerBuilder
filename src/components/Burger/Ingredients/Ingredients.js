@@ -11,9 +11,9 @@ const ingredients = props => {
             </div>
             );
         break;
-        case 'mid' : ingrediente = <div className={classes.BreadMid} />
+        case 'mid' : ingrediente = <div className={classes.BreadMid} ></div>
         break;
-        case 'bottom' : ingrediente = <div className={classes.BreadBottom} />
+        case 'bottom' : ingrediente = <div className={classes.BreadBottom} ></div>
         break;
         case 'cheese' : ingrediente = <div className={classes.Cheese} />
         break;
@@ -26,7 +26,6 @@ const ingredients = props => {
                 <div className={classes.BreadMid} />
                 <div className={classes.Meat} /> 
             </React.Fragment>
-
         );
         break;
 

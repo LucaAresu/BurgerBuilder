@@ -1,13 +1,11 @@
 import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../../utility/utility'
-import { addBurgerInOrder } from '../actions';
-import burger from '../../components/BurgerBuilder/Burger/Burger';
 const initialState = {
-    burger: []
+    burgers: []
 };
 const addBurger = (state, burger) => {
-    const newBurgers = state.burger.concat({...burger});
-    return updateObject(state, {burger : newBurgers});
+    const newBurgers = state.burgers.concat({...burger});
+    return updateObject(state, {burgers : newBurgers});
 }
 
 const reducer = (state = initialState, action) => {

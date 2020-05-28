@@ -1,0 +1,10 @@
+.BurgerOrdered {
+    width: 100%;
+    display: flex;
+    
+}
+.Burger {
+    background-color: black;
+    height: 150px;
+    width: 150px;
+}
