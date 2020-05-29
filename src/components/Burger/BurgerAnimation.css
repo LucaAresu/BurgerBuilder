@@ -1,12 +1,12 @@
 .BurgerAnimation-appear-active {
-    animation: appear 0.2s linear forwards;
+    animation: BurgerAnimationappear 0.2s linear forwards;
 }
 .BurgerAnimation-enter-active {
-    animation: appear 0.2s linear forwards;
+    animation: BurgerAnimationAppear 0.2s linear forwards;
 }
 
 
-@keyframes appear {
+@keyframes BurgerAnimationappear {
     0% {
         transform: scale(0.1);   
      }

@@ -1,0 +1,42 @@
+.ControlAnimation-appear-active {
+    animation: ControlAnimationAppear 0.4s linear forwards;
+}
+.ControlAnimation-enter-active {
+    animation: ControlAnimationAppear 0.4s linear forwards;
+}
+.ControlAnimation-exit-active {
+    animation: ControlAnimationExit 0.4s linear forwards;
+}
+
+
+@keyframes ControlAnimationAppear {
+    0% {
+        transform: translateX(400%);   
+     }
+    50% {
+        transform: translateX(150%);   
+    }
+
+    80% {
+        transform: translateX(-5%)
+    }
+    100% {
+        transform: translateX(0);   
+    }
+}
+
+@keyframes ControlAnimationExit {
+    0% {
+        transform: translateX(0%);   
+     }
+    50% {
+        transform: translateX(150%);   
+    }
+
+    80% {
+        transform: translateX(-5%)
+    }
+    100% {
+        transform: translateX(0);   
+    }
+}

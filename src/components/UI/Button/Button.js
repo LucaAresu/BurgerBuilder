@@ -1,10 +1,18 @@
 import React from 'react';
 import classes from './Button.module.css';
+import { CSSTransition } from 'react-transition-group';
+import './ButtonAnimation.css'
 
 const Button = props => {
-    const disabled = props.disabled ? true : false;
+    let disabled = props.disabled;
     return (
-        <button className={classes.Button} onClick={props.click} disabled={disabled}> {props.text} </button>
+        <CSSTransition 
+            in={!props.disabled}
+            timeout={400}
+            classNames='ButtonAnimation'
+            >
+                <button className={classes.Button} onClick={props.click} disabled={disabled}> {props.text} </button>
+        </CSSTransition>
     )
 }
 

@@ -11,6 +11,5 @@
 }
 
 .Button:disabled {
-    background-color: #979DAC;
-    cursor: no-drop;
+    visibility: hidden;
 }

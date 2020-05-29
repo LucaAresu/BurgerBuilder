@@ -1,0 +1,29 @@
+.ButtonAnimation-enter-active {
+    animation: ButtonEnter 0.2s linear forwards;
+}
+.ButtonAnimation-exit-active {
+    animation: ButtonExit 0.2s linear forwards;
+}
+
+@keyframes ButtonEnter{
+    0% {
+        transform: scale(0.1);
+    }
+    50% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes ButtonExit{
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(0.1);
+    }
+}

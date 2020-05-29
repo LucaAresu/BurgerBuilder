@@ -1,0 +1,37 @@
+.BurgerOrderedAnimation-appear-active {
+    animation: BurgerOrderedAnimationAppear 0.4s linear forwards;
+}
+
+.BurgerOrderedAnimation-exit-active {
+    animation: BurgerOrderedAnimationExit 0.2s linear forwards;
+}
+
+
+@keyframes BurgerOrderedAnimationAppear {
+    0% {
+        transform: translateX(400%);   
+        }
+    50% {
+        transform: translateX(150%);   
+    }
+
+    80% {
+        transform: translateX(-5%)
+    }
+    100% {
+        transform: translateX(0);   
+    }
+}
+
+@keyframes BurgerOrderedAnimationExit {
+    0% {
+        transform: translateX(0);   
+        }
+    50% {
+        transform: translateX(150%);   
+    }
+
+    100% {
+        transform: translateX(550%);   
+    }
+}
