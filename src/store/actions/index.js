@@ -13,4 +13,7 @@ export {
     removeIngredient,
     clearIngredients,
     setIngredients,
+    
+    setBread,
+    setMeat,
 } from './currentBurger'

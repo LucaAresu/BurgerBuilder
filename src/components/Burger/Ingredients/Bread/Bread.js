@@ -28,6 +28,7 @@ const Bread = props => {
                 <Ingredient with={ingredientTypes.INTEGRAL_BREAD_BOTTOM} />
             </React.Fragment>
         );
+        default:;
     }
 }
 

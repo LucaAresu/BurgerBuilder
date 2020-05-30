@@ -34,3 +34,23 @@ export const BREAD_ORDER = [
     bread.BREAD_NO_SEED,
     bread.INTEGRAL,
 ];
+export const MEAT_ORDER = [
+    ingredients.BEEF,
+    ingredients.CHICKEN,
+]
+
+export const DISPLAY_NAME = {
+    [ingredients.TOMATO] : 'Pomodoro',
+    [ingredients.ONION] : 'Cipolla',
+    [ingredients.BACON] : 'Bacon',
+    [ingredients.CHEESE] : 'Formaggio',
+    [ingredients.SALAD] : 'Lattuga',
+    
+    [ingredients.BEEF] : 'Manzo',
+    [ingredients.CHICKEN] : 'Pollo',
+
+    [bread.BREAD_SEED] : 'Standard',
+    [bread.BREAD_NO_SEED] : 'Senza Semi',
+    [bread.INTEGRAL] : 'Integrale',
+
+}

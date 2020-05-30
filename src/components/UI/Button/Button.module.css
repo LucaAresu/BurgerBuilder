@@ -11,5 +11,5 @@
 }
 
 .Button:disabled {
-    visibility: hidden;
+    background-color: grey;
 }
