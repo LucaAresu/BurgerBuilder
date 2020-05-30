@@ -3,6 +3,9 @@ import Ingredient from './Ingredients/Ingredients';
 import classes from './Burger.module.css'
 import { CSSTransition} from 'react-transition-group'
 import './BurgerAnimation.css';
+import * as ingTypes from './Ingredients/IngredientTypes';
+import Bread from './Ingredients/Bread/Bread';
+import * as BreadTypes from './Ingredients/Bread/BreadTypes';
 
 const burger = props => {
 
@@ -10,8 +13,7 @@ const burger = props => {
         const ing = [];
         const n = props.ingredients[ele];
         for(let i = 0 ; i < n ; i++)
-        ing.push( <Ingredient with={ele} key={ele+i} idx={i} />)
-
+            ing.push( <Ingredient with={ele.toUpperCase()} key={ele+i} idx={i} />)
         return ing;
     });
     return(
@@ -22,11 +24,9 @@ const burger = props => {
         classNames='BurgerAnimation'
      >
         <div className={classes.Burger}> 
-            <Ingredient with='top' />
-
-            {ingredients}
-
-            <Ingredient with='bottom' />
+            <Bread type={props.bread}>
+                {ingredients}
+            </Bread>
         </div>
     </CSSTransition>
     );

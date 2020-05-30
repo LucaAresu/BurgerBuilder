@@ -22,7 +22,7 @@ const BurgerOrdered = props => {
         <div className={classes.BurgerOrdered}>
             <div className={classes.Summary}>
                 <div className={classes.Burger}>
-                    <Burger ingredients={props.ingredients} />
+                    <Burger bread='BREAD_SEED' ingredients={props.ingredients} />
                 </div>
                 <div className={classes.Description}>
                     {description}

@@ -3,6 +3,7 @@ import {useSelector, useDispatch } from 'react-redux';
 import BurgerOrdered from './BurgerOrdered/BurgerOrdered';
 import classes from './Cart.module.css';
 import * as actions from '../../store/actions/index';
+import EmptyCart from './EmptyCart/EmptyCart';
 
 const Cart = props => {
     const burgers = useSelector( state => state.order.burgers);
@@ -30,7 +31,7 @@ const Cart = props => {
         removeBurgerFromStore(burger);
     }
 
-    let content =  <h1> Il Carrello è vuoto!</h1>;
+    let content =  <EmptyCart />;
     if(burgers.length)
         content = stateBurgers.map( (burger, index) => <BurgerOrdered 
             ingredients={burger.ingredients} 

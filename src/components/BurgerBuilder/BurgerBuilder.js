@@ -18,7 +18,7 @@ const  BurgerBuilder = props => {
             <div className={classes.BurgerBuilder}>
                 <div className={classes.BurgerContainer}>
                     <div className={classes.Burger}>
-                        <Burger  ingredients= {burger}/>
+                        <Burger  bread='BREAD_SEED' ingredients= {burger}/>
                     </div>
                     
                 </div>

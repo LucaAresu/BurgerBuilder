@@ -8,14 +8,14 @@ import './ControlAnimation.css';
 const burgerControl = props => {
     const totalIngredients = Object.keys(props.ingredients).map(ele => props.ingredients[ele]).reduce( ( acc, ele) => acc+ele);
     const ingredienti = Object.keys(props.ingredients).map(ele =>{
-    return (
-    <IngredientControl
-        add = {() => props.add(ele)}
-        remove = {() => props.remove(ele) }
-        name = {ele}
-        quantity = {props.ingredients[ele]}
-        key = {ele}
-    /> )}) 
+        return (
+        <IngredientControl
+            add = {() => props.add(ele)}
+            remove = {() => props.remove(ele) }
+            name = {ele}
+            quantity = {props.ingredients[ele]}
+            key = {ele}
+        /> )}) 
     return (
         <div className={classes.BurgerControl}>
         <CSSTransition

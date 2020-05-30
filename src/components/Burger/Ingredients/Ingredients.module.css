@@ -16,6 +16,24 @@
     margin: 1% auto;
     position: relative;
 }
+.IntegralBreadBottom {
+  height: 13%;
+  width: 80%;
+  background: linear-gradient(#8b3b06, #c15711);
+  border-radius: 0 0 30px 30px;
+  box-shadow: inset -15px 0 #632903;
+  margin: 1% auto;
+}
+
+.IntegralBreadTop {
+  height: 20%;
+  width: 80%;
+  background: linear-gradient(#8b3b06, #c15711);
+  border-radius: 50% 50% 0 0;
+  box-shadow: inset -15px 0 #632903;
+  margin: 1% auto;
+  position: relative;
+}
 
 .BreadMid {
   width: 80%;
