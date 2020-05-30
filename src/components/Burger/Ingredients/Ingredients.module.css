@@ -107,12 +107,19 @@
   }
   
 
-.Meat {
+.Beef {
     width: 80%;
     height: 8%;
     background: linear-gradient(#7f3608, #702e05);
     margin: 0.5% auto;
     border-radius: 15px;
+}
+.Chicken {
+  width: 80%;
+  height: 6%;
+  background: linear-gradient(#e4aa86, #cf9c7d);
+  margin: 0.5% auto;
+  border-radius: 15px;
 }
 
 .Cheese {
@@ -136,4 +143,112 @@
     height: 3%;
     background: linear-gradient(#bf3813, #c45e38);
     margin: 0.5% auto;
+}
+
+.Tomato {
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(#ee2b2b, #f36565);
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+}
+.Tomato:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#ee2b2b, #f36565);
+  border-radius: 20px;
+  position: absolute;
+  left: -101%;
+
+}
+
+.TomatoContainer {
+  position: relative;
+  width: 100%;
+  height: 5%;
+  margin: 0.5% auto;
+
+}
+
+.OnionContainer {
+  width: 80%;
+  height: 1.5%;
+  margin: 0.5% auto;
+  position: relative;
+}
+
+.Onion {
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  left: 15%;
+  background: linear-gradient(#b52bec, #a41cda);
+}
+.Onion:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -120%;
+  background: linear-gradient(#b52bec, #a41cda);
+
+}
+.Onion:after {
+  content: "";
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  left: 120%;
+  background: linear-gradient(#b52bec, #a41cda);
+}
+
+.Onion2 {
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  background: linear-gradient(#b52bec, #a41cda);
+}
+.Onion2:before {
+  content: "";
+  width: 110%;
+  height: 100%;
+  position: absolute;
+  left: -120%;
+  background: linear-gradient(#b52bec, #a41cda);
+
+}
+.Onion2:after {
+  content: "";
+  width: 120%;
+  height: 100%;
+  position: absolute;
+  left: 120%;
+  background: linear-gradient(#b52bec, #a41cda);
+}
+.Onion3 {
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  left: 75%;
+  background: linear-gradient(#b52bec, #a41cda);
+}
+.Onion3:before {
+  content: "";
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  left: -120%;
+  background: linear-gradient(#b52bec, #a41cda);
+
+}
+.Onion3:after {
+  content: "";
+  width: 110%;
+  height: 100%;
+  position: absolute;
+  left: 120%;
+  background: linear-gradient(#b52bec, #a41cda);
 }

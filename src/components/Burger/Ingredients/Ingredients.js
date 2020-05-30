@@ -20,13 +20,20 @@ const ingredients = props => {
         case ingTypes.CHEESE : ingrediente = <div className={classes.Cheese} />; break;
         case ingTypes.BACON : ingrediente = <div className={classes.Bacon} />; break;
         case ingTypes.SALAD : ingrediente = <div className={classes.Salad} />; break;
-        case ingTypes.MEAT : ingrediente = props.idx === 0 ?  <div className={classes.Meat} /> :  (
+        case ingTypes.BEEF :
+        case ingTypes.CHICKEN : ingrediente = props.idx === 0 ?  <div className={classes.Chicken} /> :  (
             <React.Fragment>
                 <div className={classes.BreadMid} />
-                <div className={classes.Meat} /> 
+                <div className={classes.Beef} /> 
             </React.Fragment>
         );
         break;
+        case ingTypes.TOMATO : ingrediente = <div className={classes.TomatoContainer}><div className={classes.Tomato} /></div>; break;
+        case ingTypes.ONION : ingrediente = <div className={classes.OnionContainer}>
+            <div className={classes.Onion} />
+            <div className={classes.Onion2} />
+            <div className={classes.Onion3} />
+            </div>; break;
 
         default : ;
 

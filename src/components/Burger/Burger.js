@@ -3,9 +3,7 @@ import Ingredient from './Ingredients/Ingredients';
 import classes from './Burger.module.css'
 import { CSSTransition} from 'react-transition-group'
 import './BurgerAnimation.css';
-import * as ingTypes from './Ingredients/IngredientTypes';
 import Bread from './Ingredients/Bread/Bread';
-import * as BreadTypes from './Ingredients/Bread/BreadTypes';
 
 const burger = props => {
 

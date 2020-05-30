@@ -2,10 +2,14 @@ import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../../utility/utility';
 
 const initialBurger = {
+    tomato: 0,
+    onion: 0,
     bacon : 0,
     cheese : 0,
-    meat : 0,
+    beef : 0,
+    chicken: 0,
     salad: 0,
+
 }
 
 const reducer = (state = initialBurger, action) => {

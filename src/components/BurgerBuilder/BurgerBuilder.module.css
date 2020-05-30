@@ -15,7 +15,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
 .Burger {
     width: 90%;
@@ -24,7 +23,6 @@
 }
 
 @media(min-width : 700px) {
-
     .BurgerContainer {
         width: 40%;
     }

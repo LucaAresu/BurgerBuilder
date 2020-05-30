@@ -7,7 +7,11 @@ export const BREAD_MID = 'BREAD_MID';
 export const BREAD_BOTTOM = 'BREAD_BOTTOM';
 export const INTEGRAL_BREAD_BOTTOM = 'INTEGRAL_BREAD_BOTTOM';
 
-export const MEAT = 'MEAT';
+export const BEEF = 'BEEF';
+export const CHICKEN = 'CHICKEN';
+
 export const SALAD = 'SALAD';
 export const CHEESE = 'CHEESE';
 export const BACON = 'BACON';
+export const TOMATO = 'TOMATO';
+export const ONION = 'ONION';
