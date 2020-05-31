@@ -1,0 +1,25 @@
+.BurgerContainer {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.Burger {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+}
+@media (min-width: 500px) {
+    .BurgerContainer {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 750px) {
+    .BurgerContainer {
+        width: 40%;
+    }
+}

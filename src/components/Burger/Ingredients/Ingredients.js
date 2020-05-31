@@ -30,7 +30,7 @@ const ingredients = props => {
             </div>); 
         break;
 
-        default : ;
+        default : ingrediente = null;
 
     }
     return ingrediente;

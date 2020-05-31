@@ -1,33 +1,62 @@
 .BurgerBuilder {
-    margin: 0 auto;
-    height: 80%;
-    background-color: #3A86FF;
-    box-sizing: border-box;
-}
-
-.BurgerContainer {
-    padding: 1rem;
-    margin: auto;
     height: 100%;
     width: 100%;
-    background-color: white;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.Burger {
-    width: 90%;
-    height: 90%;
-    margin: auto;
 }
 
-@media(min-width : 700px) {
-    .BurgerContainer {
-        width: 40%;
+.BurgerViewer {
+    background-color: #3A86FF;
+    height: 60%;
+    width: 100%;
+}
+.BurgerControl {
+    background-color: #FB5607;
+    position: fixed;
+    width: 100%;
+    height: 39%;
+    bottom: 0;
+}
+.Buttons {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 39%;
+    display: flex;
+    justify-content: space-between;
+}
+@media(min-height: 650px) {
+    .BurgerViewer {
+        height: 65%;
     }
-    .Burger {
-        width: 70%;
+    .BurgerControl {
+        height: 34%;
+    }
+    .Buttons {
+        bottom: 34%;
+    } 
+}
+
+@media(min-height: 750px) {
+    .BurgerViewer {
         height: 70%;
     }
+    .BurgerControl {
+        height: 29%;
+    }
+    .Buttons {
+        bottom: 29%;
+    } 
 }
+
+
+@media (min-height: 930px) {
+    .BurgerViewer {
+        height: 75%;
+    }
+    .BurgerControl {
+        height: 24%;
+    }
+    .Buttons {
+        bottom: 24%;
+    }
+}
+

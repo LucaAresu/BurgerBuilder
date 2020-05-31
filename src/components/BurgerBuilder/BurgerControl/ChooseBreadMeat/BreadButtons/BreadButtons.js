@@ -10,7 +10,6 @@ const BreadButtons = props => {
         disabled = {props.burger.bread === ele}
         click={() => props.set(ele)}
         /> ));
-
     return breadButtons;
 }
 

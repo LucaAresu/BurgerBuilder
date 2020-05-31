@@ -1,0 +1,4 @@
+.ChooseIngredients {
+    display: flex;
+    flex-direction: column;
+}

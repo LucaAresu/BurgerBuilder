@@ -1,38 +1,14 @@
 import React from 'react';
 import Button from '../../../../UI/Button/Button';
 import * as constants from '../../../../../constants/constants';
+import { checkIfMeatOverLimit } from '../../../../../utility/utility'
 
-const meatComparison = (stored, button) => stored.type !== button.type ? 
-    false : stored.quantity === button.quantity ? 
-        true : false; 
-
-const SetMeat = props => {
-    const meatButtons = constants.MEAT_ORDER.map(ele => (
-        <div key={ele}>
-            {constants.DISPLAY_NAME[ele]}
+const MeatButtons = props => constants.MEAT_ORDER.map(ele => (
             <Button 
-                text='SINGOLO'
-                key={ele+1}
-                disabled={meatComparison(props.burger.meat, {type : ele, quantity : 1}) || !props.burger.bread }
-                click={() => props.set({type : ele , quantity : 1})}
+                text={constants.DISPLAY_NAME[ele]}
+                key={ele}
+                disabled={props.burger.meat.type === ele || !props.burger.bread || checkIfMeatOverLimit(props.burger, ele, props.burger.meat.quantity)}
+                click={() => props.set({...props.burger.meat , type : ele})} 
             />
-            <Button 
-                text='DOPPIO'
-                key={ele+2}
-                disabled={meatComparison(props.burger.meat, {type : ele, quantity : 2}) || !props.burger.bread}
-                click={() => props.set({type : ele , quantity : 2})}
-            />
-            <Button 
-                text='TRIPLO'
-                key={ele+3}
-                disabled={meatComparison(props.burger.meat, {type : ele, quantity : 3}) || !props.burger.bread}
-                click={() => props.set({type : ele , quantity : 3})}
-            />
-        </div>
-    ) );
-
-    return meatButtons;
-
-}
-
-export default SetMeat;
+    ));
+export default MeatButtons;

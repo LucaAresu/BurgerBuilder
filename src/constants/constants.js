@@ -9,8 +9,9 @@ export const PRICES = {
         [ingredients.BREAD_MID] : 0.50,
     },
     meat : {
-        [ingredients.CHICKEN] : 1.50,
+        [ingredients.NO_MEAT] : 0,
         [ingredients.BEEF] : 2,
+        [ingredients.CHICKEN] : 1.50,
     },
     ingredients : {
         [ingredients.TOMATO] : 0.50,
@@ -29,12 +30,21 @@ export const INGREDIENT_ORDER = [
     ingredients.SALAD,
 ];
 
+export const INGREDIENT_LIMIT = {
+    [ingredients.TOMATO] : 2,
+    [ingredients.ONION] : 2,
+    [ingredients.BACON] : 3,
+    [ingredients.CHEESE] : 3,
+    [ingredients.SALAD] : 2,
+}
+
 export const BREAD_ORDER = [
     bread.BREAD_SEED,
     bread.BREAD_NO_SEED,
     bread.INTEGRAL,
 ];
 export const MEAT_ORDER = [
+    ingredients.NO_MEAT,
     ingredients.BEEF,
     ingredients.CHICKEN,
 ]
@@ -46,11 +56,13 @@ export const DISPLAY_NAME = {
     [ingredients.CHEESE] : 'Formaggio',
     [ingredients.SALAD] : 'Lattuga',
     
+    [ingredients.NO_MEAT] : 'Senza Carne',
     [ingredients.BEEF] : 'Manzo',
     [ingredients.CHICKEN] : 'Pollo',
 
     [bread.BREAD_SEED] : 'Standard',
     [bread.BREAD_NO_SEED] : 'Senza Semi',
     [bread.INTEGRAL] : 'Integrale',
-
 }
+
+export const MAX_INGREDIENTS = 10;

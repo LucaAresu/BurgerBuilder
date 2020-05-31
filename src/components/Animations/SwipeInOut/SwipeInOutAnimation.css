@@ -1,0 +1,40 @@
+.SwipeInOutAnimation-appear-active {
+    animation: SwipeInOutAnimationAppear 0.2s linear forwards;
+}
+.SwipeInOutAnimation-enter-active {
+    animation: SwipeInOutAnimationAppear 0.2s linear forwards;
+}
+.SwipeInOutAnimation-exit-active {
+    animation: SwipeInOutAnimationExit 0.2s linear forwards;
+}
+
+
+
+@keyframes SwipeInOutAnimationAppear {
+    0% {
+        transform: translateX(400%);   
+        }
+    50% {
+        transform: translateX(150%);   
+    }
+
+    80% {
+        transform: translateX(-5%)
+    }
+    100% {
+        transform: translateX(0);   
+    }
+}
+
+@keyframes SwipeInOutAnimationExit {
+    0% {
+        transform: translateX(0);   
+        }
+    50% {
+        transform: translateX(150%);   
+    }
+
+    100% {
+        transform: translateX(550%);   
+    }
+}

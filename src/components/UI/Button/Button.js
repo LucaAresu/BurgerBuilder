@@ -7,8 +7,9 @@ const Button = props => {
     return (
         <CSSTransition 
             mountOnEnter
+            unmountOnExit
             in={!props.hidden}
-            timeout={400}
+            timeout={200}
             classNames='ButtonAnimation'
             >
                 <button className={classes.Button} onClick={props.click} disabled={props.disabled}> {props.text} </button>
