@@ -4,6 +4,7 @@ import ChooseBreadMeat from './ChooseBreadMeat/ChooseBreadMeat';
 import ChooseIngredients from './ChooseIngredients/ChooseIngredients';
 import { useDispatch, useSelector } from 'react-redux';
 import * as actions from '../../../store/actions/index';
+import ChooseSauce from './ChooseSauce/ChooseSauce';
 
 const BurgerControl = props => {
     const currentBurger = useSelector(state => state.currentBurger);
@@ -15,7 +16,8 @@ const BurgerControl = props => {
     const previousPhase = useCallback(() => dispatch(actions.previousPhase()), [dispatch]);
     const addIngredient = ingredient => dispatch(actions.addIngredient(ingredient));
     const removeIngredient = ingredient => dispatch(actions.removeIngredient(ingredient));
-
+    const setSauce = sauce => dispatch(actions.setSauce(sauce));
+    const setMeatCooking = cooking => dispatch(actions.setCooking(cooking));
     let content;
     switch(currentBurger.phase) {
         case 0: content = <ChooseBreadMeat 
@@ -48,6 +50,20 @@ const BurgerControl = props => {
             setButtonNext = {props.setButtonNext}
             /> 
         break;
+        case 2: content = <ChooseSauce 
+            burger={currentBurger}
+
+            setSauce = {setSauce}
+            setCooking = {setMeatCooking}
+
+            nextPhase = {nextPhase}
+            previousPhase = {previousPhase}
+
+            buttonBack = {props.buttonBack}
+            setButtonBack = {props.setButtonBack}
+            buttonNext = {props.buttonNext}
+            setButtonNext = {props.setButtonNext}
+        />; break;
         default: content = <Layout><h1>Errore</h1></Layout>
     }
 

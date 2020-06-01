@@ -43,20 +43,21 @@ const ChooseBreadMeat = props => {
     return (
         <Layout>
             <div>
-            Scegli il tuo pane <br /><BreadButtons burger= {props.burger} set={props.setBread} /><br />
-            <SwipeAnimation visible={Boolean(props.burger.bread)}>
-                <p>Scegli la carne</p>
-                <MeatButtons burger={props.burger} set={props.setMeat} />
-            </SwipeAnimation>
-            <SwipeAnimation visible={props.burger.meat.type !== ingredients.NO_MEAT}>
-                <p>Scegli la quantità</p>
-                <MeatQuantityButtons burger={props.burger} set={props.setMeat} />
-            </SwipeAnimation>
-            <SwipeAnimation visible={props.burger.meat.quantity > 1 && props.burger.meat.type !== ingredients.NO_MEAT}>
-                <p>Pane tra la carne</p>
-                <WantBreadMid burger={props.burger} set={props.setBreadMid} />
-            </SwipeAnimation>
-        </div>    
+                <p>Scegli il tipo di pane</p>
+                <BreadButtons burger= {props.burger} set={props.setBread} /><br />
+                <SwipeAnimation visible={Boolean(props.burger.bread)}>
+                    <p>Scegli la carne</p>
+                    <MeatButtons burger={props.burger} set={props.setMeat} />
+                </SwipeAnimation>
+                <SwipeAnimation visible={props.burger.meat.type !== ingredients.NO_MEAT}>
+                    <p>Scegli la quantità</p>
+                    <MeatQuantityButtons burger={props.burger} set={props.setMeat} />
+                </SwipeAnimation>
+                <SwipeAnimation visible={props.burger.meat.quantity > 1 && props.burger.meat.type !== ingredients.NO_MEAT}>
+                    <p>Pane tra la carne</p>
+                    <WantBreadMid burger={props.burger} set={props.setBreadMid} />
+                </SwipeAnimation>
+            </div>    
         </Layout>
 
     );

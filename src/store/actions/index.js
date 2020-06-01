@@ -17,6 +17,9 @@ export {
     setBread,
     setMeat,
     breadMidToggle,
+    setSauce,
+    setCooking,
+    
     nextPhase,
     previousPhase,
 } from './currentBurger'

@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Ingredients.module.css'
 import * as ingTypes from './IngredientTypes';
+import Meat from './Meat/Meat';
 
 const ingredients = props => {
     let ingrediente;
@@ -13,13 +14,14 @@ const ingredients = props => {
         break;
         case ingTypes.BREAD_TOP : ingrediente = <div className={classes.BreadTop} />; break;
         case ingTypes.INTEGRAL_BREAD_TOP : ingrediente = <div className={classes.IntegralBreadTop} />; break;
-        case ingTypes.BREAD_MID : ingrediente = <div className={classes.BreadMid} ></div>; break;
+        case ingTypes.BREAD_MID : ingrediente = props.meatType === ingTypes.NO_MEAT ? null : <div className={classes.BreadMid} ></div>; break;
         case ingTypes.BREAD_BOTTOM : ingrediente = <div className={classes.BreadBottom} ></div>;break;
         case ingTypes.INTEGRAL_BREAD_BOTTOM : ingrediente = <div className={classes.IntegralBreadBottom} />; break;
         case ingTypes.CHEESE : ingrediente = <div className={classes.Cheese} />; break;
         case ingTypes.BACON : ingrediente = <div className={classes.Bacon} />; break;
         case ingTypes.SALAD : ingrediente = <div className={classes.Salad} />; break;
         case ingTypes.BEEF : ingrediente = <div className={classes.Beef} />; break;
+        case ingTypes.MEAT : ingrediente = <Meat type={props.meatType} />; break;
         case ingTypes.CHICKEN : ingrediente = <div className={classes.Chicken} /> ;break;
         case ingTypes.TOMATO : ingrediente = <div className={classes.TomatoContainer}><div className={classes.Tomato} /></div>; break;
         case ingTypes.ONION : ingrediente = (

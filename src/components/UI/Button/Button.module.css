@@ -4,12 +4,15 @@
     background-color: #FFBE0B;
     border: 1px solid black;
     transition: 0.2s;
-
+    box-shadow: 1px 1px 2px #000;
+    transition : 0.5s;
 }
 .Button:hover {
     background-color: #3A86FF;
 }
 
 .Button:disabled {
-    background-color: grey;
+    color: inherit;
+    background-color: #999;
+    box-shadow: inset 1px 1px 2px #000;
 }

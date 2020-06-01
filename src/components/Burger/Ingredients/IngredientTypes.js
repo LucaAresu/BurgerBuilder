@@ -10,6 +10,7 @@ export const INTEGRAL_BREAD_BOTTOM = 'INTEGRAL_BREAD_BOTTOM';
 export const BEEF = 'BEEF';
 export const CHICKEN = 'CHICKEN';
 export const NO_MEAT = 'NO_MEAT';
+export const MEAT = 'MEAT';
 
 export const SALAD = 'SALAD';
 export const CHEESE = 'CHEESE';

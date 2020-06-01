@@ -1,5 +1,7 @@
 import * as ingredients from '../components/Burger/Ingredients/IngredientTypes';
 import * as bread from '../components/Burger/Ingredients/Bread/BreadTypes';
+import * as sauces from '../components/Burger/Ingredients/SauceTypes';
+import * as meatCookings from '../components/Burger/Ingredients/Meat/MeatCookings';
 
 export const PRICES = {
     bread : {
@@ -20,6 +22,13 @@ export const PRICES = {
         [ingredients.CHEESE] : 0.30,
         [ingredients.SALAD] : 0.15,
     },
+    sauces : {
+        [sauces.NO_SAUCE] : 0,
+        [sauces.SPECIAL] : 2,
+        [sauces.SPECIAL_SPICY] : 2.50,
+        [sauces.KETCHUP] : 1.50,
+        [sauces.BARBECUE] : 2,
+    }
 };
 
 export const INGREDIENT_ORDER = [
@@ -30,12 +39,35 @@ export const INGREDIENT_ORDER = [
     ingredients.SALAD,
 ];
 
+export const BURGER_ORDER = [
+    ingredients.TOMATO,
+    ingredients.ONION,
+    ingredients.BACON,
+    ingredients.CHEESE,
+    ingredients.MEAT,
+    ingredients.SALAD,
+    ingredients.BREAD_MID
+];
+
+export const SAUCE_ORDER = [
+    sauces.NO_SAUCE,
+    sauces.SPECIAL,
+    sauces.SPECIAL_SPICY,
+    sauces.KETCHUP,
+    sauces.BARBECUE,
+]
+export const MEAT_COOKING_ORDER = [
+    meatCookings.RARE,
+    meatCookings.MEDIUM,
+    meatCookings.WELL_DONE,
+];
+
 export const INGREDIENT_LIMIT = {
     [ingredients.TOMATO] : 2,
     [ingredients.ONION] : 2,
     [ingredients.BACON] : 3,
     [ingredients.CHEESE] : 3,
-    [ingredients.SALAD] : 2,
+    [ingredients.SALAD] : 3,
 }
 
 export const BREAD_ORDER = [
@@ -63,6 +95,16 @@ export const DISPLAY_NAME = {
     [bread.BREAD_SEED] : 'Standard',
     [bread.BREAD_NO_SEED] : 'Senza Semi',
     [bread.INTEGRAL] : 'Integrale',
+
+    [sauces.NO_SAUCE] : 'Nessuna',
+    [sauces.SPECIAL] : 'Special',
+    [sauces.SPECIAL_SPICY] : 'Special Spicy',
+    [sauces.KETCHUP] : 'Ketchup',
+    [sauces.BARBECUE] : 'Barbecue',
+
+    [meatCookings.RARE] : 'Al Sangue',
+    [meatCookings.MEDIUM] : 'Media',
+    [meatCookings.WELL_DONE] : 'Ben Cotta',
 }
 
-export const MAX_INGREDIENTS = 10;
+export const MAX_INGREDIENTS = 13;

@@ -29,7 +29,22 @@ const ChooseIngredients = props => {
             })
         },200);
 
-        return () => clearTimeout(timeout);
+        return () =>  {
+            clearTimeout(timeout);
+            setButtonBack({
+                text : 'INDIETRO',
+                hidden : true,
+                disabled : false,
+                click : previousPhase,
+            });
+            setButtonNext({
+                text : 'AVANTI',
+                hidden : true,
+                disabled : false,
+                click : nextPhase,
+            })
+
+        };
     },[setButtonBack, previousPhase, setButtonNext, nextPhase])
 
     return  (

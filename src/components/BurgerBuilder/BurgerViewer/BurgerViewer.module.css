@@ -23,3 +23,8 @@
         width: 40%;
     }
 }
+@media only screen and (orientation: landscape) and (max-height: 550px){
+    .BurgerContainer {
+        width: 100%;
+    }
+}
