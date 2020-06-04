@@ -45,6 +45,7 @@ const  BurgerBuilder = props => {
                 </div>
                 <div className={classes.BurgerControl}>
                     <BurgerControl
+                        history = {props.history}
                         butonBack = {buttonBack}
                         setButtonBack={setButtonBack}
                         buttonNext = {buttonNext}

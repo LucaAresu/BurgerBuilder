@@ -21,6 +21,8 @@ export const PRICES = {
         [ingredients.BACON] : 0.35,
         [ingredients.CHEESE] : 0.30,
         [ingredients.SALAD] : 0.15,
+        [ingredients.BREAD_MID] : 0.50,
+        [ingredients.MEAT] : 0,
     },
     sauces : {
         [sauces.NO_SAUCE] : 0,

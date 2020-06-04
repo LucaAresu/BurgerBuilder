@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
-import { updateObject, ingredientNumber } from '../../utility/utility';
+import { updateObject, ingredientNumber, destructureBurger } from '../../utility/utility';
 import * as ings from '../../components/Burger/Ingredients/IngredientTypes';
 import * as constants from '../../constants/constants';
 import * as sauces from '../../components/Burger/Ingredients/SauceTypes';
@@ -78,6 +78,7 @@ const reducer = (state = burgerState, action) => {
         case actionTypes.BURGER_REMOVE_INGREDIENT : return removeIngredient(state,action);
         case actionTypes.BURGER_SET_SAUCE : return updateObject(state, {sauce : action.sauce});
         case actionTypes.BURGER_SET_COOKING : return updateObject(state, {meatCooking : action.cooking})
+        case actionTypes.BURGER_RESET : return destructureBurger(burgerState);
 
         default: return state;
     }

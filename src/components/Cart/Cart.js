@@ -6,7 +6,8 @@ import * as actions from '../../store/actions/index';
 import EmptyCart from './EmptyCart/EmptyCart';
 
 const Cart = props => {
-    const burgers = useSelector( state => state.order.burgers);
+    const burgers = useSelector( state => state.order);
+    console.log(burgers);
     const [stateBurgers, setStateBurgers ] = useState(burgers.map( (burger, index) => ( { ingredients :  {...burger} , visibility: true, index : index})));
     const dispatch = useDispatch();
     const removeBurgerFromStore = burger => dispatch(actions.removeBurgerFromOrder(burger));

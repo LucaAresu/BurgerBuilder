@@ -3,8 +3,7 @@ import classes from './Button.module.css';
 import { CSSTransition } from 'react-transition-group';
 import './ButtonAnimation.css'
 
-const Button = props => {
-    return (
+const Button = props =>  (
         <CSSTransition 
             mountOnEnter
             unmountOnExit
@@ -15,6 +14,5 @@ const Button = props => {
                 <button className={classes.Button} onClick={props.click} disabled={props.disabled}> {props.text} </button>
         </CSSTransition>
     )
-}
 
 export default Button;

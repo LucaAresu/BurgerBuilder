@@ -8,7 +8,6 @@ import * as constants from '../../constants/constants'
 
 
 const Burger = props => {
-        console.log(props.burger);
         const ingredients = [];
         for(let i = 0 ; i< 3 ; i++)
             ingredients.push(constants.BURGER_ORDER.map(ele =>  
@@ -36,4 +35,4 @@ const Burger = props => {
     );
 };
 
-export default Burger;
+export default React.memo(Burger);

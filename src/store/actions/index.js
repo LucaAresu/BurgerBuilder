@@ -11,7 +11,7 @@ export {
 export {
     addIngredient,
     removeIngredient,
-    clearIngredients,
+    resetIngredients,
     setIngredients,
     
     setBread,

@@ -30,7 +30,7 @@ const ChooseSauce = props => {
 
         return () =>  {
             clearTimeout(timeout);
-            /*setButtonBack({
+            setButtonBack({
                 text : 'INDIETRO',
                 hidden : true,
                 disabled : false,
@@ -41,7 +41,7 @@ const ChooseSauce = props => {
                 hidden : true,
                 disabled : false,
                 click : nextPhase, 
-            })*/
+            })
 
         };
     },[setButtonBack, previousPhase, setButtonNext, nextPhase])
