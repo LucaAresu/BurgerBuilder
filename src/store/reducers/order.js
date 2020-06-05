@@ -3,8 +3,7 @@ import { updateObject, destructureBurger } from '../../utility/utility'
 const initialState = [];
 
 const removeBurger = (state,burger) => {
-    const newBurgers = state.burgers.filter(( ele, index) => index === burger.index ? false : true );
-    return updateObject(state, {burgers : newBurgers });
+    return state.filter(( ele, index) => index === burger.index ? false : true );
 }
 
 const reducer = (state = initialState, action) => {

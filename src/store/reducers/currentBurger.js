@@ -79,6 +79,7 @@ const reducer = (state = burgerState, action) => {
         case actionTypes.BURGER_SET_SAUCE : return updateObject(state, {sauce : action.sauce});
         case actionTypes.BURGER_SET_COOKING : return updateObject(state, {meatCooking : action.cooking})
         case actionTypes.BURGER_RESET : return destructureBurger(burgerState);
+        case actionTypes.BURGER_SET : return destructureBurger(action.burger);
 
         default: return state;
     }

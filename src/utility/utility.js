@@ -1,4 +1,5 @@
 import * as constants from '../constants/constants';
+import * as ings from '../components/Burger/Ingredients/IngredientTypes';
 
 export const updateObject = (oldObject, element) => ({ ...oldObject, ...element}); 
 
@@ -15,14 +16,11 @@ export const destructureBurger = burger => ({
 
 export const getPrice = burger => {
     let costo=0;
-    console.log('1', costo);
     costo += constants.PRICES.bread[burger.bread];
-    console.log('2', costo);
     costo += constants.PRICES.meat[burger.meat.type]*burger.meat.quantity;
-    console.log('3', costo);
-    costo += Object.keys(burger.ingredients).map(ele => burger.ingredients[ele] * constants.PRICES.ingredients[ele]).reduce((acc, ele) => acc+ele);    
-    console.log('4', costo);
+    costo += Object.keys(burger.ingredients).reduce( (acc, ele) => (acc + burger.ingredients[ele] * constants.PRICES.ingredients[ele]) ,0)
+    if(burger.meat.type === ings.NO_MEAT && burger.ingredients[ings.BREAD_MID])
+        costo -= burger.ingredients[ings.BREAD_MID] * constants.PRICES.bread[ings.BREAD_MID];
     costo += constants.PRICES.sauces[burger.sauce];
-    console.log('5', costo);
     return costo.toFixed(2);
 }

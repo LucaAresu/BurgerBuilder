@@ -29,7 +29,7 @@ export const PRICES = {
         [sauces.SPECIAL] : 2,
         [sauces.SPECIAL_SPICY] : 2.50,
         [sauces.KETCHUP] : 1.50,
-        [sauces.BARBECUE] : 2,
+        [sauces.BARBECUE] : 2, 
     }
 };
 

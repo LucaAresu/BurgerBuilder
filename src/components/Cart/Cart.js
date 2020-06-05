@@ -4,17 +4,18 @@ import BurgerOrdered from './BurgerOrdered/BurgerOrdered';
 import classes from './Cart.module.css';
 import * as actions from '../../store/actions/index';
 import EmptyCart from './EmptyCart/EmptyCart';
+import { destructureBurger } from '../../utility/utility';
+import TotalPrice from './TotalPrice/TotalPrice';
 
 const Cart = props => {
     const burgers = useSelector( state => state.order);
-    console.log(burgers);
-    const [stateBurgers, setStateBurgers ] = useState(burgers.map( (burger, index) => ( { ingredients :  {...burger} , visibility: true, index : index})));
+    const [stateBurgers, setStateBurgers ] = useState(burgers.map( (burger, index) => ( { burger :  destructureBurger(burger) , visibility: true, index : index})));
     const dispatch = useDispatch();
     const removeBurgerFromStore = burger => dispatch(actions.removeBurgerFromOrder(burger));
-    const setBurger = ingredients => dispatch(actions.setIngredients(ingredients));
+    const setBurger = burger => dispatch(actions.setBurger(burger));
 
     const setIngredients = burger => {
-        setBurger(burger.ingredients);
+        setBurger(burger.burger);
         removeBurger(burger);
         props.history.push('/');
     }
@@ -33,15 +34,22 @@ const Cart = props => {
     }
 
     let content =  <EmptyCart />;
-    if(burgers.length)
-        content = stateBurgers.map( (burger, index) => <BurgerOrdered 
-            ingredients={burger.ingredients} 
+    if(burgers.length) {
+        const burgers = stateBurgers.map( (burger, index) => <BurgerOrdered 
+            burger={burger.burger}
             key={index}
             visibility= {burger.visibility}
             deleteAnimation= { () => hideForAnimation(burger)}
             delete = {() => removeBurger(burger)}
             setIngredients = {() => setIngredients(burger)}
             />);
+        content = (
+            <React.Fragment>
+                <TotalPrice burgers={stateBurgers} />
+                {burgers}
+            </React.Fragment>
+        )
+    }
     return (
         <div className={classes.Cart}>
             {content}

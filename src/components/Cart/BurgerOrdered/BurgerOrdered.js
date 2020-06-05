@@ -4,9 +4,9 @@ import classes from './BurgerOrdered.module.css';
 import { CSSTransition} from 'react-transition-group';
 import './BurgerOrderedAnimation.css'
 import Button from '../../UI/Button/Button';
+import Recap from '../../Burger/Recap/Recap';
  
 const BurgerOrdered = props => {
-    const description = Object.keys(props.ingredients).map(ing => <p key={ing}> {ing} : {props.ingredients[ing]} </p>);    
     return (
         <CSSTransition
         in={props.visibility}
@@ -22,12 +22,10 @@ const BurgerOrdered = props => {
         <div className={classes.BurgerOrdered}>
             <div className={classes.Summary}>
                 <div className={classes.Burger}>
-                    <Burger bread='BREAD_SEED' ingredients={props.ingredients} />
-                </div>
-                <div className={classes.Description}>
-                    {description}
+                    <Burger burger={props.burger} />
                 </div>
             </div>
+            <Recap burger={props.burger} />
             <div className={classes.Buttons}>
                 <Button text='ELIMINA' click={props.deleteAnimation} />
                 <Button

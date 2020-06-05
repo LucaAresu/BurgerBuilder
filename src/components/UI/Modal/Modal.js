@@ -10,7 +10,7 @@ const Modal = props => {
     const dispatch = useDispatch();
     const closeModal = () => dispatch(actions.hideModal() );
     const show = useSelector( state =>  state.ui.modalShow);
-
+    const modalMessage = useSelector(state => state.ui.modalMessage);
     return (    
     <React.Fragment>
         <Backdrop clicked={closeModal} show={show} />
@@ -22,7 +22,7 @@ const Modal = props => {
             classNames='ModalAnimation'
          >
             <div className={classes.Modal}>
-            Testo del modal
+            {modalMessage}
             </div>       
         </CSSTransition>
     </React.Fragment>);

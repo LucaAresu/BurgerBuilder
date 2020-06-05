@@ -12,7 +12,7 @@ export {
     addIngredient,
     removeIngredient,
     resetIngredients,
-    setIngredients,
+    setBurger,
     
     setBread,
     setMeat,
