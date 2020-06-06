@@ -25,7 +25,7 @@ const Recap = props => (
         </div>
         <div>
             <h3> Prezzo</h3>
-                {getPrice(props.burger)}
+                {getPrice(props.burger).toFixed(2)}
         </div>
     </div>
 )

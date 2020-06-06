@@ -6,10 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as actions from '../../../store/actions/index';
 import ChooseSauce from './ChooseSauce/ChooseSauce';
 import Recap from './Recap/Recap';
+import ModalMessage from '../../UI/Modal/MessageCentered/MessageCentered';
 
 const BurgerControl = props => {
     const currentBurger = useSelector(state => state.currentBurger);
-    const history = props.history;
     const dispatch = useCallback(useDispatch(),[]);
     const setBread = breadType => dispatch(actions.setBread(breadType));
     const setMeat = meat => dispatch(actions.setMeat(meat));
@@ -22,12 +22,17 @@ const BurgerControl = props => {
     const setMeatCooking = cooking => dispatch(actions.setCooking(cooking));
     const addInOrder = useCallback( burger => dispatch(actions.addBurgerInOrder(burger)),[dispatch]);
     const burgerReset = useCallback( () => dispatch(actions.resetIngredients()), [dispatch] );
+    const showModal = useCallback ( message => dispatch(actions.showModal(message)),[dispatch]);
 
     const addOrder = useCallback( burger => {
+        const modalMessage = (
+            <ModalMessage>
+                Burger aggiunto al carrello
+            </ModalMessage>);
         addInOrder(burger);
         burgerReset();
-        history.push('/')
-    },[addInOrder, burgerReset, history])
+        showModal(modalMessage)
+    },[addInOrder, burgerReset, showModal])
     let content;
     switch(currentBurger.phase) {
         case 0: content = <ChooseBreadMeat 

@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
-import { updateObject, destructureBurger } from '../../utility/utility'
+import { destructureBurger } from '../../utility/utility'
 const initialState = [];
 
 const removeBurger = (state,burger) => {

@@ -13,6 +13,7 @@ const Cart = props => {
     const dispatch = useDispatch();
     const removeBurgerFromStore = burger => dispatch(actions.removeBurgerFromOrder(burger));
     const setBurger = burger => dispatch(actions.setBurger(burger));
+    const showModal = message => dispatch(actions.showModal(message));
 
     const setIngredients = burger => {
         setBurger(burger.burger);
@@ -45,7 +46,7 @@ const Cart = props => {
             />);
         content = (
             <React.Fragment>
-                <TotalPrice burgers={stateBurgers} />
+                <TotalPrice burgers={stateBurgers} showModal={showModal} />
                 {burgers}
             </React.Fragment>
         )

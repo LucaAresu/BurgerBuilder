@@ -22,5 +22,5 @@ export const getPrice = burger => {
     if(burger.meat.type === ings.NO_MEAT && burger.ingredients[ings.BREAD_MID])
         costo -= burger.ingredients[ings.BREAD_MID] * constants.PRICES.bread[ings.BREAD_MID];
     costo += constants.PRICES.sauces[burger.sauce];
-    return costo.toFixed(2);
+    return costo;
 }

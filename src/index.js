@@ -19,7 +19,7 @@ const reducer = combineReducers({
 const store = createStore(reducer)
 ReactDOM.render(
     <Provider store = {store}>
-      <BrowserRouter >
+      <BrowserRouter basename='progetti/burgerbuilder'>
         <App />  
       </BrowserRouter>
     </Provider>,
